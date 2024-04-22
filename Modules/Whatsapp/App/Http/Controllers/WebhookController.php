@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Log;
 use Netflie\WhatsAppCloudApi\WebHook;
 use Netflie\WhatsAppCloudApi\WhatsAppCloudApi;
 use Modules\Whatsapp\Scenarios\WhatsAppFlowManager;
+use Modules\Whatsapp\Scenarios\WhatsAppConfig;
 
 class WebhookController extends Controller
 {
