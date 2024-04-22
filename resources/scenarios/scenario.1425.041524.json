@@ -1,0 +1,166 @@
+{
+    "version": "3.1",
+    "screens": [
+      {
+        "id": "welcome",
+        "action": {
+            "type": "navigate",
+            "screen_id": "upload_document_question"
+        }
+      },
+      {
+        "id": "upload_document_question",
+        "action": {
+            "type": "send_template",
+            "layout": {
+                "type": "template",
+                "text": "",
+                "templateId": "upload_documents_demo"
+              },
+            "components": [
+                {
+                    "type": "button",
+                    "text": "Yes",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "waiting"
+                    }
+                },
+                {
+                    "type": "button",
+                    "text": "No",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "connect_personal_question"
+                    }
+                }
+            ]
+        }
+      },
+      {
+        "id": "connect_personal_question",
+        "action": {
+            "type": "send_message",
+            "layout": {
+                "type": "button",
+                "text": "Do you know the person you would like to connect with?"
+            },
+            "components": [
+                {
+                    "type": "button",
+                    "text": "Yes",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "personal_option_list"
+                    }
+                },
+                {
+                    "type": "button",
+                    "text": "No",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "question_option_list"
+                    }
+                }
+            ]
+        }
+      },
+      {
+        "id": "personal_option_list",
+        "title": "Select Person",
+        "action": {
+            "type": "send_message",
+            "second": 3,
+            "layout": {
+                "type": "option_list",
+                "header": "Choose a person",
+                "text": "Who do you would like to connect with?",
+                "footer": "",
+                "variable": "supporters"
+            },
+            "components": []
+        }
+      },
+      {
+        "id": "question_option_list",
+        "title": "Select Person",
+        "action": {
+            "type": "send_message",
+            "second": 3,
+            "layout": {
+                "type": "option_list",
+                "header": "Choose Question",
+                "text": "Can I help you?",
+                "footer": "Please choose a question in below question list?",
+                "variable": "components"
+            },
+            "components": [
+                {
+                    "type": "option",
+                    "text": "Tax question?",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "waiting"
+                    }
+                },
+                {
+                    "type": "option",
+                    "text": "Accounts question?",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "waiting"
+                    }
+                },
+                {
+                    "type": "option",
+                    "text": "Corporate secretary?",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "waiting"
+                    }
+                },
+                {
+                    "type": "option",
+                    "text": "I don't know",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "waiting"
+                    }
+                }
+            ]
+        }
+      },
+      {
+        "id": "finish",
+        "action": {
+            "type": "finish"
+        }
+      },
+      {
+        "id": "waiting",
+        "action": {
+            "type": "waiting"
+        }
+      },
+      {
+        "id": "send_notification_to_support",
+        "action": {
+            "type": "send_message",
+            "layout": {
+                "type": "text_variable",
+                "text": "I had notify to $supporter. $supporter will connect to you soon. Thanks.",
+                "variables": ["$supporter", "components"]
+            },
+            "components": [
+                {
+                    "type": "navigate",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "finish"
+                    }
+                }
+            ]
+        }
+      }
+    ]
+  }

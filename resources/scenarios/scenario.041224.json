@@ -1,0 +1,93 @@
+{
+    "version": "3.1",
+    "screens": [
+      {
+        "id": "welcome",
+        "title": "Welcome to Our Booking Service",
+        "layout": {
+          "type": "text",
+          "text": "Please choose a booking date:"
+        },
+        "components": [
+          {
+            "type": "button",
+            "text": "Select Date",
+            "action": {
+              "type": "navigate",
+              "screen_id": "date_selection"
+            }
+          }
+        ]
+      },
+      {
+        "id": "date_selection",
+        "title": "Select Booking Date",
+        "layout": {
+          "type": "text",
+          "text": "Choose a date for your booking:"
+        },
+        "components": [
+          {
+            "type": "button",
+            "text": "Tomorrow",
+            "action": {
+              "type": "navigate",
+              "screen_id": "service_selection"
+            }
+          },
+          {
+            "type": "button",
+            "text": "Next Week",
+            "action": {
+              "type": "navigate",
+              "screen_id": "service_selection"
+            }
+          }
+        ]
+      },
+      {
+        "id": "service_selection",
+        "title": "Select Service",
+        "layout": {
+          "type": "text",
+          "text": "Choose a service:"
+        },
+        "components": [
+          {
+            "type": "button",
+            "text": "Haircut",
+            "action": {
+              "type": "navigate",
+              "screen_id": "receipt_upload"
+            }
+          },
+          {
+            "type": "button",
+            "text": "Massage",
+            "action": {
+              "type": "navigate",
+              "screen_id": "receipt_upload"
+            }
+          }
+        ]
+      },
+      {
+        "id": "receipt_upload",
+        "title": "Upload Receipt",
+        "layout": {
+          "type": "text",
+          "text": "Please upload your receipt:"
+        },
+        "components": [
+          {
+            "type": "upload",
+            "text": "Upload Receipt",
+            "action": {
+              "type": "complete",
+              "message": "Receipt received! Your booking is confirmed."
+            }
+          }
+        ]
+      }
+    ]
+  }

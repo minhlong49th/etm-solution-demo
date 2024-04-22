@@ -1,0 +1,77 @@
+{
+    "version": "3.1",
+    "screens": [
+      {
+        "id": "welcome",
+        "action": {
+            "type": "navigate",
+            "screen_id": "upload_document_question"
+        }
+      },
+      {
+        "id": "upload_document_question",
+        "action": {
+            "type": "send_template",
+            "layout": {
+                "type": "template",
+                "text": "",
+                "templateId": "upload_documents_demo"
+              },
+            "components": [
+            {
+                "type": "button",
+                "text": "Yes",
+                "action": {
+                    "type": "navigate",
+                    "screen_id": "confirm_finish_upload"
+                }
+            },
+            {
+                "type": "button",
+                "text": "No",
+                "action": {
+                    "type": "navigate",
+                    "screen_id": "finish"
+                }
+            }
+            ]
+        }
+      },
+      {
+        "id": "confirm_finish_upload",
+        "title": "Select Service",
+        "action": {
+            "type": "waiting",
+            "second": 3,
+            "layout": {
+                "type": "button",
+                "text": "Are you finish to upload your documents?"
+            },
+            "components": [
+                {
+                    "type": "button",
+                    "text": "Yes",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "finish"
+                    }
+                },
+                {
+                    "type": "button",
+                    "text": "No",
+                    "action": {
+                        "type": "navigate",
+                        "screen_id": "confirm_finish_upload"
+                    }
+                }
+            ]
+        }
+      },
+      {
+        "id": "finish",
+        "action": {
+            "type": "finish"
+        }
+      }
+    ]
+  }

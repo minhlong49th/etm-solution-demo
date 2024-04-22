@@ -1,0 +1,28 @@
+{
+    "version": "3.1",
+    "screens": [
+        {
+            "id": "welcome",
+            "action": {
+                "type": "navigate",
+                "screen_id": "personal_option_list"
+            }
+          },
+        {
+            "id": "personal_option_list",
+            "title": "Select Perspn",
+            "action": {
+                "type": "send_message",
+                "second": 3,
+                "layout": {
+                    "type": "option_list",
+                    "header": "Supporters",
+                    "text": "Who do you would like to connect with?",
+                    "footer": "Thanks for your time!",
+                    "variable": "supporters"
+                },
+                "components": []
+            }
+          }
+    ]
+  }
