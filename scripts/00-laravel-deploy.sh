@@ -13,9 +13,3 @@ php artisan route:cache
 
 echo "Running migrations..."
 php artisan migrate --force
-
-echo "Running key:generate..."
-php artisan key:generate --show
-
-echo "Running make:auth..."
-php artisan make:auth
